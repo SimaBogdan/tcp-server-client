@@ -73,6 +73,7 @@ def client_handler(client_socket):
     client_socket.close()
 
 while True:
+
     client_socket, client_address = server.accept() #acceptam conexiunea cu clientul
     print(f"Client has joined the fight {client_address}")
     client_thread = threading.Thread(target=client_handler, args=(client_socket,)) #se creaza un nou thread pentru fiecare client nou si pentru izolarea fiecarui client
